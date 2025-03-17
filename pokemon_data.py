@@ -14,7 +14,7 @@ starters = [
 {"name": "Squirtle", "type": "Water", "level": 5},
 {"name": "Charmander", "type": "Fire", "level": 5},
 ]
-print(starters[0])
+print(starters[1])
 
 # Print statements
 print(f"{pikachu['name']} is a level {pikachu['level']} Pokémon.")
