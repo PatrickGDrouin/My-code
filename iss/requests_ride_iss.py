@@ -20,24 +20,26 @@ def main():
     ## strip the json off the 200 that was returned by our API
     ## translate the json into python lists and dictionaries
     helmetson = groundctrl.json()
-
-    ## display our Pythonic data
-    print("\n\nConverted Python data")
-    print(helmetson)
-
-    print('\n\nPeople in Space: ', helmetson['number'])
-    people = helmetson['people']
-    print(people)
-    
-    iss_people = []
+    iss_people = {}
     num_people = 0
-    for people in helmetson['people']:
-        if people['craft'] == "ISS":
-            iss_people.append(people['name'])
+    ## display our Pythonic data
+    # print("\n\nConverted Python data")
+    # print(helmetson)
+
+    # print('\n\nPeople in Space: ', helmetson['number'])
+    # people = helmetson['people']
+    # print(people)
+    
+    for peoples in helmetson['people']:
+        if peoples['craft'] == "ISS":
+            iss_people[num_people] = peoples
             num_people += 1
+    
     print(f"People on ISS: {num_people}")
-    for people in iss_people:
-        print(f"{people} on the ISS")
+
+    for peoples in iss_people:
+        print(f"{iss_people[peoples]['name']} on the {iss_people[peoples]['craft']}")
+
 
 if __name__ == "__main__":
     main()
