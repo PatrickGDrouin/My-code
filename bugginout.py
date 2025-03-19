@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import time
 
 def print1by1(text, delay=0.1):
     # there's nothing wrong with this function, it's just some cool code!
@@ -28,6 +29,6 @@ def main():
     # this gets written out with no spaces
     # fix the for loop to give a nicer output!
     for x in ["YOUR", "FUTURE", "HAS", "BEEN", "WRITTEN", "TO", "HOROSCOPE.TXT..."]:
-        print(f"{x},")
+        print1by1(f"{x} ")
 
 main()
